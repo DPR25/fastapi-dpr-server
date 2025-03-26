@@ -1,0 +1,5 @@
+.venv/
+.data/
+aitlas/
+__pycache__/
+.env
