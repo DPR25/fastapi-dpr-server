@@ -1,0 +1,865 @@
+{
+    "satlas_amazon": {
+        "path": "saved_models/Satlas_Amazon_epoch30.pth",
+        "max_batch_size": 4,
+        "name": "[SATLAS] Amazon Rainforest RGB Segmentation Model",
+        "dataset_details": {
+            "name": "Amazon and Atlantic Forest image datasets for semantic segmentation",
+            "url": "https://zenodo.org/records/4498086",
+            "dataset_sizes": {
+                "train": 499,
+                "validation": 100,
+                "test": 20
+            }
+        },
+        "model_details": {
+            "name": "Sentinel2_SwinB_SI_RGB",
+            "based_on": "https://github.com/allenai/satlaspretrain_models/",
+            "size_MB": 360,
+            "epochs": 30,
+            "num_classes": 2,
+            "labels": [
+                "background",
+                "forest"
+            ],
+            "colormap": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    255,
+                    255,
+                    255
+                ]
+            ],
+            "band_input": [
+                "b04",
+                "b03",
+                "b02"
+            ],
+            "allowed_image_input_sizes": [
+                512,
+                1024
+            ]
+        },
+        "evaluation_details": [
+            {
+                "IOU": 0.9160570203553283,
+                "IOU mean": 0.9160291616082962,
+                "IOU per Class": [
+                    0.91449968,
+                    0.91755865
+                ]
+            },
+            {
+                "F1_score Micro": 0.9561897277832025,
+                "F1_score Macro": 0.9561738858131004,
+                "F1_score Weighted": 0.9561771721318983,
+                "F1_score per Class": [
+                    0.95534064,
+                    0.95700713
+                ]
+            },
+            {
+                "Accuracy": 0.9561897277832031,
+                "Accuracy per Class": [
+                    0.95618973,
+                    0.95618973
+                ]
+            }
+        ]
+    },
+    "satlas_atlantic": {
+        "path": "saved_models/Satlas_Atlantic_epoch30.pth",
+        "max_batch_size": 4,
+        "name": "[SATLAS] Atlantic Forest RGB Segmentation Model",
+        "dataset_details": {
+            "name": "Amazon and Atlantic Forest image datasets for semantic segmentation",
+            "url": "https://zenodo.org/records/4498086",
+            "dataset_sizes": {
+                "train": 485,
+                "validation": 100,
+                "test": 20
+            }
+        },
+        "model_details": {
+            "name": "Sentinel2_SwinB_SI_RGB",
+            "based_on": "https://github.com/allenai/satlaspretrain_models/",
+            "size_MB": 360,
+            "epochs": 30,
+            "num_classes": 2,
+            "labels": [
+                "background",
+                "forest"
+            ],
+            "colormap": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    255,
+                    255,
+                    255
+                ]
+            ],
+            "band_input": [
+                "b04",
+                "b03",
+                "b02"
+            ],
+            "allowed_image_input_sizes": [
+                512
+            ]
+        },
+        "evaluation_details": [
+            {
+                "IOU": 0.7196257145523254,
+                "IOU mean": 0.6484626133206366,
+                "IOU per Class": [
+                    0.80662864,
+                    0.49029659
+                ]
+            },
+            {
+                "F1_score Micro": 0.8369562149047846,
+                "F1_score Macro": 0.7754754405349589,
+                "F1_score Weighted": 0.8189807462232752,
+                "F1_score per Class": [
+                    0.89296563,
+                    0.65798525
+                ]
+            },
+            {
+                "Accuracy": 0.8369562149047851,
+                "Accuracy per Class": [
+                    0.83695621,
+                    0.83695621
+                ]
+            }
+        ]
+    },
+    "aitlas_amazon": {
+        "path": "saved_models/Aitlas_Amazon.pth.tar",
+        "max_batch_size": 4,
+        "name": "[AiTLAS] Amazon Rainforest RGB Segmentation Model",
+        "dataset_details": {
+            "name": "Amazon Rainforest dataset for semantic segmentation",
+            "url": "https://zenodo.org/record/3233081#.YTYm_44zaUk",
+            "dataset_sizes": {
+                "train": 30,
+                "validation": 15,
+                "test": 15
+            }
+        },
+        "model_details": {
+            "name": "DeepLabV3",
+            "based_on": "https://pytorch.org/vision/stable/models/generated/torchvision.models.segmentation.deeplabv3_resnet101.html#torchvision.models.segmentation.deeplabv3_resnet101",
+            "size_MB": 714,
+            "epochs": 40,
+            "num_classes": 2,
+            "labels": [
+                "background",
+                "forest"
+            ],
+            "colormap": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    255,
+                    255,
+                    255
+                ]
+            ],
+            "band_input": [
+                "b04",
+                "b03",
+                "b02"
+            ],
+            "allowed_image_input_sizes": [
+                512,
+                1024
+            ]
+        },
+        "evaluation_details": [
+            {
+                "IOU": 0.8456317740088586,
+                "IOU mean": 0.8461749415609907,
+                "IOU per Class": [
+                    0.86789375,
+                    0.82445613
+                ]
+            },
+            {
+                "F1_score Micro": 0.916360225173279,
+                "F1_score Macro": 0.9165290964209294,
+                "F1_score Weighted": 0.9170950470624333,
+                "F1_score per Class": [
+                    0.92927529,
+                    0.90378291
+                ]
+            },
+            {
+                "Accuracy": 0.9142213185628255,
+                "Accuracy per Class": [
+                    0.92842763,
+                    0.900015
+                ]
+            }
+        ]
+    },
+    "satlas_rgb1": {
+        "path": "saved_models/Satlas_RGB1_epoch70.pth",
+        "max_batch_size": 4,
+        "name": "[SATLAS] Pretrain RGB1 Segmentation Model",
+        "dataset_details": {
+            "name": "satlas-pretrain",
+            "url": "https://huggingface.co/allenai/satlas-pretrain",
+            "dataset_sizes": {
+                "train": 5656,
+                "validation": 0,
+                "test": 3702
+            }
+        },
+        "model_details": {
+            "name": "Sentinel2_SwinB_SI_RGB",
+            "based_on": "https://github.com/allenai/satlaspretrain_models/",
+            "size_MB": 360,
+            "epochs": 100,
+            "num_classes": 12,
+            "labels": [
+                "background",
+                "water",
+                "developed",
+                "tree",
+                "shrub",
+                "grass",
+                "crop",
+                "bare",
+                "snow",
+                "wetland",
+                "mangroves",
+                "moss"
+            ],
+            "colormap": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    255
+                ],
+                [
+                    255,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    192,
+                    0
+                ],
+                [
+                    200,
+                    170,
+                    120
+                ],
+                [
+                    0,
+                    255,
+                    0
+                ],
+                [
+                    255,
+                    255,
+                    0
+                ],
+                [
+                    128,
+                    128,
+                    128
+                ],
+                [
+                    255,
+                    255,
+                    255
+                ],
+                [
+                    0,
+                    255,
+                    255
+                ],
+                [
+                    255,
+                    0,
+                    255
+                ],
+                [
+                    128,
+                    0,
+                    128
+                ]
+            ],
+            "band_input": [
+                "b04",
+                "b03",
+                "b02"
+            ],
+            "allowed_image_input_sizes": [
+                512
+            ]
+        },
+        "evaluation_details": [
+            {
+                "IOU": 0.5275466621413074,
+                "IOU mean": 0.2715683931795421,
+                "IOU per Class": [
+                    0.00184679,
+                    0.60037727,
+                    0.62003255,
+                    0.59362291,
+                    0.3538088,
+                    0.3514771,
+                    0.56063167,
+                    0.08482253,
+                    0.0,
+                    0.04415439,
+                    0.04804671,
+                    0.0
+                ]
+            },
+            {
+                "F1_score Micro": 0.6907110273172209,
+                "F1_score Macro": 0.3631975989561942,
+                "F1_score Weighted": 0.6797870030724643,
+                "F1_score per Class": [
+                    0.00368677,
+                    0.75029467,
+                    0.7654569,
+                    0.74499796,
+                    0.52268651,
+                    0.52013771,
+                    0.71846763,
+                    0.15638047,
+                    0.0,
+                    0.08457444,
+                    0.09168811,
+                    0.0
+                ]
+            },
+            {
+                "Accuracy": 0.9530891218036011,
+                "Accuracy per Class": [
+                    0.98762772,
+                    0.96266946,
+                    0.87371605,
+                    0.91505114,
+                    0.98472297,
+                    0.85838085,
+                    0.87827618,
+                    0.98283258,
+                    0.99993557,
+                    0.99454291,
+                    0.9994683,
+                    0.99984574
+                ]
+            }
+        ]
+    },
+    "satlas_rgb2": {
+        "path": "saved_models/Satlas_RGB2_epoch100.pth",
+        "max_batch_size": 4,
+        "name": "[SATLAS] Pretrain RGB2 Segmentation Model",
+        "dataset_details": {
+            "name": "satlas-pretrain",
+            "url": "https://huggingface.co/allenai/satlas-pretrain",
+            "dataset_sizes": {
+                "train": 5656,
+                "validation": 0,
+                "test": 3702
+            }
+        },
+        "model_details": {
+            "name": "Sentinel2_SwinB_SI_RGB",
+            "based_on": "https://github.com/allenai/satlaspretrain_models/",
+            "size_MB": 360,
+            "epochs": 100,
+            "num_classes": 12,
+            "labels": [
+                "background",
+                "water",
+                "developed",
+                "tree",
+                "shrub",
+                "grass",
+                "crop",
+                "bare",
+                "snow",
+                "wetland",
+                "mangroves",
+                "moss"
+            ],
+            "colormap": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    255
+                ],
+                [
+                    255,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    192,
+                    0
+                ],
+                [
+                    200,
+                    170,
+                    120
+                ],
+                [
+                    0,
+                    255,
+                    0
+                ],
+                [
+                    255,
+                    255,
+                    0
+                ],
+                [
+                    128,
+                    128,
+                    128
+                ],
+                [
+                    255,
+                    255,
+                    255
+                ],
+                [
+                    0,
+                    255,
+                    255
+                ],
+                [
+                    255,
+                    0,
+                    255
+                ],
+                [
+                    128,
+                    0,
+                    128
+                ]
+            ],
+            "band_input": [
+                "b04",
+                "b03",
+                "b02"
+            ],
+            "allowed_image_input_sizes": [
+                512
+            ]
+        },
+        "evaluation_details": [
+            {
+                "IOU": 0.5370197470568344,
+                "IOU mean": 0.2659677640863532,
+                "IOU per Class": [
+                    0.01173397,
+                    0.60826667,
+                    0.6536582,
+                    0.59330671,
+                    0.31323594,
+                    0.30890341,
+                    0.57659089,
+                    0.07976055,
+                    0.0,
+                    0.0193646,
+                    0.02679223,
+                    0.0
+                ]
+            },
+            {
+                "F1_score Micro": 0.6987805434317255,
+                "F1_score Macro": 0.3527779273804717,
+                "F1_score Weighted": 0.6810396803904013,
+                "F1_score per Class": [
+                    0.02319576,
+                    0.75642514,
+                    0.79056022,
+                    0.7447489,
+                    0.47704443,
+                    0.47200337,
+                    0.73144009,
+                    0.14773747,
+                    0.0,
+                    0.03799347,
+                    0.05218627,
+                    0.0
+                ]
+            },
+            {
+                "Accuracy": 0.954061534111508,
+                "Accuracy per Class": [
+                    0.98761703,
+                    0.96330009,
+                    0.88053672,
+                    0.91707112,
+                    0.98515703,
+                    0.85860067,
+                    0.87937035,
+                    0.98291298,
+                    0.99993557,
+                    0.99491056,
+                    0.99948055,
+                    0.99984574
+                ]
+            }
+        ]
+    },
+    "satlas_ms1": {
+        "path": "saved_models/Satlas_MS_tci-b08_epoch150.pth",
+        "max_batch_size": 4,
+        "name": "[SATLAS] Pretrain Multiband 1 Segmentation Model",
+        "dataset_details": {
+            "name": "satlas-pretrain",
+            "url": "https://huggingface.co/allenai/satlas-pretrain",
+            "dataset_sizes": {
+                "train": 5656,
+                "validation": 0,
+                "test": 3702
+            }
+        },
+        "model_details": {
+            "name": "Sentinel2_SwinB_SI_MS",
+            "based_on": "https://github.com/allenai/satlaspretrain_models/",
+            "size_MB": 360,
+            "epochs": 150,
+            "num_classes": 12,
+            "labels": [
+                "background",
+                "water",
+                "developed",
+                "tree",
+                "shrub",
+                "grass",
+                "crop",
+                "bare",
+                "snow",
+                "wetland",
+                "mangroves",
+                "moss"
+            ],
+            "colormap": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    255
+                ],
+                [
+                    255,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    192,
+                    0
+                ],
+                [
+                    200,
+                    170,
+                    120
+                ],
+                [
+                    0,
+                    255,
+                    0
+                ],
+                [
+                    255,
+                    255,
+                    0
+                ],
+                [
+                    128,
+                    128,
+                    128
+                ],
+                [
+                    255,
+                    255,
+                    255
+                ],
+                [
+                    0,
+                    255,
+                    255
+                ],
+                [
+                    255,
+                    0,
+                    255
+                ],
+                [
+                    128,
+                    0,
+                    128
+                ]
+            ],
+            "band_input": [
+                "b04",
+                "b03",
+                "b02",
+                "b08"
+            ],
+            "allowed_image_input_sizes": [
+                512
+            ]
+        },
+        "evaluation_details": [
+            {
+                "IOU": 0.5955503340933298,
+                "IOU mean": 0.33532558894753084,
+                "IOU per Class": [
+                    0.0700686,
+                    0.70265891,
+                    0.67547708,
+                    0.64202161,
+                    0.30332007,
+                    0.45834114,
+                    0.63441801,
+                    0.15785859,
+                    0.0,
+                    0.16057524,
+                    0.21916782,
+                    0.0
+                ]
+            },
+            {
+                "F1_score Micro": 0.746514003811419,
+                "F1_score Macro": 0.4436594011755825,
+                "F1_score Weighted": 0.7400464110919467,
+                "F1_score per Class": [
+                    0.13096095,
+                    0.82536661,
+                    0.80631014,
+                    0.78198923,
+                    0.46545753,
+                    0.62857877,
+                    0.77632283,
+                    0.27267336,
+                    0.0,
+                    0.27671664,
+                    0.35953676,
+                    0.0
+                ]
+            },
+            {
+                "Accuracy": 0.9592796749367105,
+                "Accuracy per Class": [
+                    0.98665794,
+                    0.97175842,
+                    0.88690899,
+                    0.9251064,
+                    0.98533753,
+                    0.87516222,
+                    0.90463571,
+                    0.98145686,
+                    0.99993557,
+                    0.99500728,
+                    0.99954343,
+                    0.99984574
+                ]
+            }
+        ]
+    },
+    "satlas_ms2": {
+        "path": "saved_models/Satlas_MS_tci-b08-b11-b12_epoch40.pth",
+        "max_batch_size": 4,
+        "name": "[SATLAS] Pretrain Multiband 2 Segmentation Model",
+        "dataset_details": {
+            "name": "satlas-pretrain",
+            "url": "https://huggingface.co/allenai/satlas-pretrain",
+            "dataset_sizes": {
+                "train": 5656,
+                "validation": 0,
+                "test": 3702
+            }
+        },
+        "model_details": {
+            "name": "Sentinel2_SwinB_SI_MS",
+            "based_on": "https://github.com/allenai/satlaspretrain_models/",
+            "size_MB": 360,
+            "epochs": 40,
+            "num_classes": 12,
+            "labels": [
+                "background",
+                "water",
+                "developed",
+                "tree",
+                "shrub",
+                "grass",
+                "crop",
+                "bare",
+                "snow",
+                "wetland",
+                "mangroves",
+                "moss"
+            ],
+            "colormap": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    255
+                ],
+                [
+                    255,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    192,
+                    0
+                ],
+                [
+                    200,
+                    170,
+                    120
+                ],
+                [
+                    0,
+                    255,
+                    0
+                ],
+                [
+                    255,
+                    255,
+                    0
+                ],
+                [
+                    128,
+                    128,
+                    128
+                ],
+                [
+                    255,
+                    255,
+                    255
+                ],
+                [
+                    0,
+                    255,
+                    255
+                ],
+                [
+                    255,
+                    0,
+                    255
+                ],
+                [
+                    128,
+                    0,
+                    128
+                ]
+            ],
+            "band_input": [
+                "b04",
+                "b03",
+                "b02",
+                "b08",
+                "b11",
+                "b12"
+            ],
+            "allowed_image_input_sizes": [
+                512
+            ]
+        },
+        "evaluation_details": [
+            {
+                "IOU": 0.60043309802374,
+                "IOU mean": 0.32071053807724903,
+                "IOU per Class": [
+                    0.02531206,
+                    0.69731785,
+                    0.66974011,
+                    0.64281531,
+                    0.26527911,
+                    0.48739856,
+                    0.64375257,
+                    0.12220778,
+                    0.0,
+                    0.10071356,
+                    0.19398955,
+                    0.0
+                ]
+            },
+            {
+                "F1_score Micro": 0.750338266267014,
+                "F1_score Macro": 0.4199611489820694,
+                "F1_score Weighted": 0.7417369196227206,
+                "F1_score per Class": [
+                    0.04937435,
+                    0.82167032,
+                    0.80220881,
+                    0.7825777,
+                    0.41932109,
+                    0.65537049,
+                    0.78327186,
+                    0.21779885,
+                    0.0,
+                    0.18299686,
+                    0.32494346,
+                    0.0
+                ]
+            },
+            {
+                "Accuracy": 0.960807917334036,
+                "Accuracy per Class": [
+                    0.98736844,
+                    0.97197588,
+                    0.88759186,
+                    0.9271481,
+                    0.98558033,
+                    0.88199576,
+                    0.91012261,
+                    0.98355426,
+                    0.99993557,
+                    0.99504554,
+                    0.99953092,
+                    0.99984574
+                ]
+            }
+        ]
+    }
+}
