@@ -1,0 +1,6 @@
+{
+    "max_workers": 8,
+    "max_workers_io": 4,
+    "local": true,
+    "bucket_name": "dpr"
+}

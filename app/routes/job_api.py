@@ -41,6 +41,29 @@ async def create_job(job_request: SingleJobRequest, background_tasks: Background
 
     try:
         async with httpx.AsyncClient() as client:
+
+            # Create a new job record
+            new_job = JobModel(
+                job_id=job_id,
+                model=job_request.model,
+                center=job_request.center,
+                time_interval=job_request.time_interval,
+                resolution=job_request.resolution,
+                maxcc=job_request.maxcc,
+                stats=job_request.stats,
+                status="submitted",
+                s3_path=s3_path,
+                # created_at is set automatically
+                queued_at=None,
+                finished_at=None,
+                batch_job=False
+            )
+            
+            # Add and commit to database
+            db.add(new_job)
+            db.commit()
+            db.refresh(new_job)
+
             # Send the job request to the backend service
             backend_response = await client.post(
                 f'{DPR_SEGMENTATION_HUB_URL}/jobs/submit/',
@@ -69,29 +92,6 @@ async def create_job(job_request: SingleJobRequest, background_tasks: Background
             status_code=503, 
             detail=f"Error communicating with backend service: {str(exc)}"
         )
-    
-    
-    # Create a new job record
-    new_job = JobModel(
-        job_id=job_id,
-        model=job_request.model,
-        center=job_request.center,
-        time_interval=job_request.time_interval,
-        resolution=job_request.resolution,
-        maxcc=job_request.maxcc,
-        stats=job_request.stats,
-        status="submitted",
-        s3_path=s3_path,
-        # created_at is set automatically
-        queued_at=None,
-        finished_at=None,
-        batch_job=False
-    )
-    
-    # Add and commit to database
-    db.add(new_job)
-    db.commit()
-    db.refresh(new_job)
     
     # Return the created job details
     return {
@@ -213,4 +213,10 @@ def validate_job(request, single=True):
         raise HTTPException(
             status_code=400, 
             detail=f"Max cloud coverage (maxcc) should be between 0 and 1. - {request.maxcc}"
+        )
+    
+    if not single and request.splits > 12:
+        raise HTTPException(
+            status_code=400, 
+            detail=f"We do not allow more than 12 splits back in time (for now) :) - {request.splits}"
         )
