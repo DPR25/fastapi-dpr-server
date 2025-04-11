@@ -52,3 +52,22 @@ class JobResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+class LocationsResponse(BaseModel):
+    job_id: str
+    model: str
+    center: List[float]
+    time_interval: Optional[List[str]] = None
+    start_date: Optional[str] = None
+    resolution: int
+    maxcc: float
+    stats: bool
+    status: str
+    s3_path: str
+    batch_job: bool
+    created_at: datetime
+    queued_at: Optional[datetime] = None
+    finished_at: Optional[datetime] = None
+
+    class Config:
+        from_attributes = True

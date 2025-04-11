@@ -1,7 +1,8 @@
 import json
 from typing import List, Optional
 from fastapi import APIRouter, Depends, HTTPException
-from data_models.job_model import JobModel, JobResponse
+from pydantic import BaseModel
+from data_models.job_model import JobModel, JobResponse, LocationsResponse
 from config import get_db, s3_client, DPR_CLIENT_CONFIG, S3_ENDPOINT
 from sqlalchemy.orm import Session
 
@@ -12,16 +13,18 @@ router = APIRouter(
 )
 
 # Endpoint to get all locations
-@router.get("/", response_model=List[JobResponse])
-async def get_locations(status: Optional[str] = None, db: Session = Depends(get_db)):
+@router.get("/all", response_model=List[LocationsResponse])
+async def get_locations(status : Optional[str] = None, db: Session = Depends(get_db)):
     query = db.query(JobModel)
     
     if status:
         query = query.filter(JobModel.status == status)
 
     jobs = query.all()
+
     if jobs is None:
         raise HTTPException(status_code=404, detail="No locations found.")
+    
     return jobs
 
 
@@ -32,10 +35,6 @@ async def get_location(job_id: str, db: Session = Depends(get_db)):
     job = db.query(JobModel).filter(JobModel.job_id == job_id).first()
     if not job:
         raise HTTPException(status_code=404, detail="Location not found")
-    
-    #s3_path = f"{DPR_CLIENT_CONFIG['bucket_name']}/{job.s3_path}"
-
-    #print(s3_path)
 
     # Get the S3 files (metadata.json, statistics.json, images)
     metadata, statistics, image_sources = get_s3_files(job.s3_path)
